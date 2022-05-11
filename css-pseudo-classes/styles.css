@@ -9,5 +9,5 @@ tr#head {
 }
 
 tr:nth-child(odd) {
-  background-color: gray;
+  background-color: #d2d2d1;
 }

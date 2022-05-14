@@ -32,8 +32,6 @@ p {
 
 img {
   height: 75px;
-  margin-top: 20px;
-  margin-left: 25px;
 }
 
 .row {
@@ -47,6 +45,7 @@ img {
 }
 
 .border {
+  display: flex;
   justify-content: center;
   align-items: center;
   margin: auto;

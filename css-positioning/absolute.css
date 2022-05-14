@@ -15,7 +15,6 @@
   position: absolute;
   left: 235px;
   top: 20px;
-  z-index: 3;
 }
 
 .joke {
@@ -27,9 +26,8 @@
   -webkit-text-stroke: 1px black;
   text-transform: uppercase;
   position: absolute;
-  top: 175px;
+  bottom: 0;
   width: 300px;
-  z-index: 7;
 }
 
 .overlay {
@@ -38,5 +36,4 @@
   top: 0;
   height: 300px;
   width: 300px;
-  z-index: 0;
 }

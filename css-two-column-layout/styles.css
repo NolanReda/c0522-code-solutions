@@ -75,3 +75,19 @@ img {
 .padding-r-200 {
   padding-right: 200px;
 }
+
+button {
+  font-family: Karla, sans-serif;
+  font-weight: bold;
+  background-color: #fff;
+  border: solid;
+  color: #de7c77;
+  height: 35px;
+  width: 130px;
+}
+
+.center {
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}

@@ -1,0 +1,77 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+hr {
+  background-color: #bebebe;
+  color: #bebebe;
+}
+
+.logo {
+  height: 60px;
+  width: 130px;
+}
+
+.padding-l-header {
+  padding-left: 20px;
+}
+
+.column-half {
+  display: flex;
+  flex-basis: 50%;
+}
+
+.nav-bar {
+  align-items: center;
+  padding: 5px;
+  font-size: small;
+}
+
+.padding-r-5 {
+  padding-right: 30px;
+}
+
+a {
+  font-family: Avenir, sans-serif;
+  color: #bebebe;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.button {
+  display: flex;
+  background-color: #294464;
+  border: none;
+  border-radius: 3px;
+  height: 30px;
+  width: 90px;
+  justify-content: center;
+  align-items: center;
+}
+
+.avenir {
+  font-family: Avenir, sans-serif;
+}
+
+.tiempos-header {
+  font-family: "Tiempos Headline", sans-serif;
+}

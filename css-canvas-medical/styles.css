@@ -44,7 +44,7 @@ p {
   justify-content: flex-end;
   align-items: center;
   padding: 5px;
-  padding-right: 75px;
+  padding-right: 45px;
   font-size: small;
 }
 
@@ -160,7 +160,6 @@ a:active {
   background-color: #fafafa;
   height: 360px;
   margin-top: 50px;
-  margin-bottom: 50px;
   border: solid;
   border-right: none;
   border-top: none;
@@ -242,7 +241,6 @@ a:active {
 
 .padding-r-75 {
   padding-right: 75px;
-  justify-content: flex-end;
 }
 
 .align-center {

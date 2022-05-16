@@ -176,6 +176,7 @@ a:active {
 
 .margin-top-45 {
   margin-top: 45px;
+  margin-bottom: 0;
 }
 
 .wrap {
@@ -250,4 +251,17 @@ a:active {
 
 .justify-center {
   justify-content: center;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.line-spacing {
+  line-height: 35px;
+  font-size: smaller;
 }

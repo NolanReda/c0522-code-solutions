@@ -3,6 +3,13 @@
   margin: auto;
 }
 
+.two {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: auto;
+}
+
 .row {
   display: flex;
 }
@@ -15,6 +22,10 @@ hr {
 .logo {
   height: 60px;
   width: 130px;
+}
+
+p {
+  font-family: Avenir, sans-serif;
 }
 
 .padding-l-header {
@@ -38,7 +49,7 @@ hr {
 
 a {
   font-family: Avenir, sans-serif;
-  color: #bebebe;
+  color: #b9bab9;
 }
 
 a:link {
@@ -74,4 +85,144 @@ a:active {
 
 .tiempos-header {
   font-family: "Tiempos Headline", sans-serif;
+}
+
+/* css for large image below */
+
+.hero-image {
+  background-image: url("images/hero.jpg");
+  background-size: contain;
+  position: relative;
+  font-size: 0.85rem;
+  height: 420px;
+  width: 745px;
+  color: #f7f8fa;
+  z-index: 1;
+}
+
+.emr {
+  padding-left: 50px;
+  position: absolute;
+  color: #f7f8fa;
+  z-index: 6;
+  top: 3rem;
+}
+
+.hero-p {
+  padding-left: 50px;
+  position: absolute;
+  color: white;
+  z-index: 6;
+  top: 8rem;
+  font-size: smaller;
+  line-height: 1.75;
+}
+
+.overlay {
+  background: rgb(0 0 0 / 35%);
+  position: absolute;
+  width: 745px;
+  height: 420px;
+  z-index: 3;
+}
+
+.get-started {
+  color: #f7f8fa;
+  background-color: #294464;
+  border: solid;
+  border-color: #294464;
+  border-width: 10px;
+  border-radius: 3px;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  left: 50px;
+  top: 19.5rem;
+  z-index: 5;
+}
+
+.padding-l {
+  position: absolute;
+  left: 50px;
+}
+
+/* next row */
+
+.off-white {
+  background-color: #fafafa;
+}
+
+.clinicians {
+  background-color: #fafafa;
+  height: 360px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: solid;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  border-width: thin;
+  border-color: #eaecef;
+}
+
+.prefer {
+  color: #838383;
+  justify-content: center;
+}
+
+.margin-top-45 {
+  margin-top: 45px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.padding-r-10 {
+  padding-right: 10px;
+}
+
+.padding-lr-100 {
+  text-align: center;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.padding-top-50 {
+  padding-top: 50px;
+}
+
+/* new row */
+
+.ready {
+  margin-bottom: 50px;
+}
+
+.grey-background {
+  background-color: #525351;
+  height: 330px;
+}
+
+.height-10 {
+  height: 10px;
+}
+
+.height-40 {
+  height: 40px;
+  align-items: center;
+  padding-left: 4rem;
+  font-size: smaller;
+}
+
+.pr15 {
+  padding-right: 15px;
+}
+
+.no-margin {
+  margin: 0%;
+}
+
+.gh {
+  flex-basis: 100%;
+  height: 75px;
 }

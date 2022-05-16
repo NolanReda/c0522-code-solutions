@@ -33,13 +33,18 @@ p {
 }
 
 .column-half {
-  display: flex;
   flex-basis: 50%;
 }
 
+.padding-l-75 {
+  padding-left: 75px;
+}
+
 .nav-bar {
+  justify-content: flex-end;
   align-items: center;
   padding: 5px;
+  padding-right: 75px;
   font-size: small;
 }
 
@@ -73,8 +78,8 @@ a:active {
   background-color: #294464;
   border: none;
   border-radius: 3px;
-  height: 30px;
-  width: 90px;
+  height: 45px;
+  width: 125px;
   justify-content: center;
   align-items: center;
 }
@@ -195,7 +200,7 @@ a:active {
 /* new row */
 
 .ready {
-  margin-bottom: 50px;
+  margin-bottom: 25px;
 }
 
 .grey-background {
@@ -225,4 +230,25 @@ a:active {
 .gh {
   flex-basis: 100%;
   height: 75px;
+}
+
+.l50 {
+  padding-left: 50px;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.padding-r-75 {
+  padding-right: 75px;
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }

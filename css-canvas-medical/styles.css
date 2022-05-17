@@ -1,5 +1,5 @@
 .container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -8,6 +8,10 @@
   justify-content: center;
   max-width: 800px;
   margin: auto;
+}
+
+.bottom-border {
+  border-bottom: solid 1px #b9bab9;
 }
 
 .row {
@@ -116,7 +120,7 @@ a:active {
 .hero-p {
   padding-left: 50px;
   position: absolute;
-  color: white;
+  color: #fff;
   z-index: 6;
   top: 8rem;
   font-size: smaller;
@@ -262,4 +266,53 @@ a:active {
 .line-spacing {
   line-height: 35px;
   font-size: smaller;
+}
+
+.logo-white {
+  width: 150px;
+  position: absolute;
+  left: 60px;
+  top: 5rem;
+}
+
+.position-rel {
+  position: relative;
+}
+
+.address {
+  margin-left: 60px;
+  margin-top: 4rem;
+  color: #b9bab9;
+}
+
+.column-third {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.line-height-20 {
+  line-height: 20px;
+}
+
+.line-height-5 {
+  line-height: 5px;
+}
+
+.pl-4 {
+  padding-left: 4rem;
+  padding-top: 5rem;
+}
+
+.pl-12 {
+  padding-left: 12rem;
+  padding-top: 5rem;
+}
+
+.white-font {
+  color: #b9bab9;
 }

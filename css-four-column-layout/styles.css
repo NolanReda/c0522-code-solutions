@@ -1,0 +1,37 @@
+body {
+  background-color: #f7f8fa;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.column-fourth {
+  flex-basis: 25%;
+}
+
+.text {
+  font-family: Barlow, sans-serif;
+}
+
+.screen {
+  height: 500px;
+}
+
+.symbol {
+  height: 110px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.marg-5 {
+  margin-right: 5px;
+}

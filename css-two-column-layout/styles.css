@@ -1,0 +1,101 @@
+.contaner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-family: Karla, sans-serif;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: Karla, sans-serif;
+  line-height: 1.5;
+  font-size: small;
+}
+
+.center-text {
+  text-align: center;
+}
+
+h3 {
+  font-family: Karla, sans-serif;
+  font-size: medium;
+}
+
+.column-fourth {
+  flex-basis: calc(100% / 2);
+}
+
+.column-third {
+  flex-basis: 33%;
+}
+
+.column-two-thirds {
+  flex-basis: 66%;
+}
+
+img {
+  height: 100px;
+}
+
+.lr-300 {
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+.padding-lr-200 {
+  padding-right: 100px;
+}
+
+.padding-lr-100 {
+  padding-right: 100px;
+}
+
+.padding-left-100 {
+  padding-left: 170px;
+}
+
+.padding-left-200 {
+  padding-left: 200px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.padding-r-200 {
+  padding-right: 200px;
+}
+
+button {
+  font-family: Karla, sans-serif;
+  font-weight: bold;
+  background-color: #fff;
+  border: solid;
+  color: #df827d;
+  height: 35px;
+  width: 130px;
+  margin-right: 70px;
+}
+
+.center {
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.margin-0 {
+  margin-left: -50px;
+}
+
+.margin-l-50 {
+  margin-left: 50px;
+}

@@ -33,19 +33,24 @@ var orderHistory = [
     price: '$15.98'
   },
   { // order 3
-    orderNumber: '113-2883177-2648248',
-    shipTo: 'JS Masher',
-    total: '$138.93',
-    orderPlaced: 'July 3, 2020',
-    delivered: 'Jul 5, 2020',
     orderItems: [
       {
+        orderNumber: '113-2883177-2648248',
+        shipTo: 'JS Masher',
+        total: '$138.93',
+        orderPlaced: 'July 3, 2020',
+        delivered: 'Jul 5, 2020',
         title: 'Gamecube Controller - Super Smash Bros. Edition (Nintendo Switch)',
         author: null,
         returnWindow: 'Aug 5, 2020',
         price: '$94.95'
       },
       {
+        orderNumber: '113-2883177-2648248',
+        shipTo: 'JS Masher',
+        total: '$138.93',
+        orderPlaced: 'July 3, 2020',
+        delivered: 'Jul 5, 2020',
         title: 'The Art of Sql',
         author: 'Faroult, Stephane',
         returnWindow: 'Aug 4, 2020',
@@ -54,5 +59,3 @@ var orderHistory = [
     ]
   }
 ];
-
-console.log('The author of the last book on the order history is ', orderHistory[3].orderItems[1].author);

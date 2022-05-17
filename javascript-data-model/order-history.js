@@ -5,10 +5,14 @@ var orderHistory = [
     total: '$34.00',
     orderPlaced: 'August 4, 2020',
     delivered: 'Aug 8, 2020',
-    title: 'JavaScript for impatient programmers',
-    author: 'Rauschmauer, Dr. Axel',
-    returnWindow: 'Sep 7, 2020',
-    price: '$31.55'
+    orderItems: [
+      {
+        title: 'JavaScript for impatient programmers',
+        author: 'Rauschmauer, Dr. Axel',
+        returnWindow: 'Sep 7, 2020',
+        price: '$31.55'
+      }
+    ]
   },
   { // order 1
     orderNumber: '113-9984268-1280257',

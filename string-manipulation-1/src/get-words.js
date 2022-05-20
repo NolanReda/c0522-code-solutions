@@ -5,6 +5,5 @@
 // return new array
 
 function getWords(string) {
-  var words = [];
-  return words.push(string.slice(' '));
+  return string.split(' ');
 }

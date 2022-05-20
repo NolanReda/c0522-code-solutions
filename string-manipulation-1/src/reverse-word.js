@@ -12,5 +12,5 @@
 // console.log(reverseWord('foo'));
 
 // function reverseWord(string) {
-//   if
+//   return string.
 // }

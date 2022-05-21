@@ -1,16 +1,13 @@
 /* exported reverseWord */
 
-// function reverseWord(string) {
-//   debugger;
-//   var reverse = [];
-//   for (let i = string.length; i > string[i]; i--) {
-//     reverse.push(string.charAt(i));
-//   }
-//   return reverse;
-// }
+// check value of string at its last value
+// create a new string adding that value to the beginning
+// return the new string back from the function
 
-// console.log(reverseWord('foo'));
-
-// function reverseWord(string) {
-//   return string.
-// }
+function reverseWord(string) {
+  var reverse = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse = reverse + string[i];
+  }
+  return reverse;
+}

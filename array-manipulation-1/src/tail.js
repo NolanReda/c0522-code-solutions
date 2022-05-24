@@ -6,9 +6,8 @@
 
 function tail(array) {
   var newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (i !== 0) {
-      newArray.push(array[i]);
-    }
-  } return newArray;
+  for (let i = 1; i < array.length; i++) {
+    newArray.push(array[i]);
+  }
+  return newArray;
 }

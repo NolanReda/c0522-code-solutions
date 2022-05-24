@@ -11,5 +11,6 @@ function compact(array, value) {
     if (!array[i]) {
       continue;
     } newArray.push(array[i]);
-  } return newArray;
+  }
+  return newArray;
 }

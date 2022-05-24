@@ -6,9 +6,10 @@
 
 function getValues(object) {
   var values = [];
-  for (const property in object) {
+  for (var property in object) {
     if (object[property]) {
       values.push(object[property]);
     }
-  } return values;
+  }
+  return values;
 }

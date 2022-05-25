@@ -8,17 +8,19 @@
   <title>Modal</title>
 </head>
 <body>
-  <div class="flex">
-    <dialog id="modal">
-      <form class="survey" method="dialog">
-        <p>Would you like to take a survey</p><br>
+  <div class="none">
+    <div class="form">
+      <form>
+        <p>Would you like to take a survey?</p>
         <input class="survey-button" type="button" value="NO">
       </form>
-    </dialog>
+    </div>
+  </div><!--shadow/none-->
+  <div class="open">
+    <form>
+      <input class="button" type="button" value="Open Modal">
+    </form>
   </div>
-  <form>
-    <input class="button" id="openModal" type="button" value="Open Modal">
-  </form>
   <script src="main.js"></script>
 </body>
 </html>

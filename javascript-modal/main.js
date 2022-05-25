@@ -1,23 +1,18 @@
-// need to query select effected HTML elements(#openModal, #modal, .survey-button)
-// create 2 functions.
-// first function used to show the modal in the browser page
-// second to close modal
-// need to add event listener to activate the opening funciton when the button with the opening ID attribute
-// ----> gets clicked
-// add second event listener to close the modal when button inside the modal is clicked.
+var $hideShadow = document.querySelector('.none');
+var $button = document.querySelector('.button');
+var $survey = document.querySelector('.survey-button');
 
-var $openModal = document.querySelector('#openModal');
-var $modal = document.querySelector('#modal');
-var $no = document.querySelector('.survey-button');
+var openClose = true;
 
-function open(event) {
-  $modal.showModal();
+function openModal(event) {
+  if (openClose === true) {
+    openClose = false;
+    $hideShadow.className = 'shadow';
+  } else if (openClose === false) {
+    openClose = true;
+    $hideShadow.className = 'none';
+  }
 }
 
-function close(event) {
-  $modal.close();
-}
-
-$openModal.addEventListener('click', open);
-
-$no.addEventListener('click', close);
+$button.addEventListener('click', openModal);
+$survey.addEventListener('click', openModal);

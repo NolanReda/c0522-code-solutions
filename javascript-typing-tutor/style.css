@@ -18,5 +18,9 @@ p {
 }
 
 .border-bottom {
-  border-bottom: solid black 0.25rem;
+  border-bottom: solid black 0.15rem;
+}
+
+.red {
+  color: red;
 }

@@ -1,12 +1,14 @@
 var $letters = document.querySelectorAll('span');
+var currentLetter = 0;
 
 function keyPress(event) {
-  for (let i = 0; i < $letters.length; i++) {
-    $letters[i].className = 'green';
-    $letters[i + 1].className = 'border-bottom';
+  if (event.key === $letters[currentLetter].innerHTML) {
+    currentLetter++;
+    $letters[currentLetter - 1].className = 'green';
+    $letters[currentLetter].className = 'border-bottom';
+  } else if (event.key !== $letters[currentLetter].innerHTML) {
+    $letters[currentLetter].className = 'red';
   }
 }
 
 document.addEventListener('keydown', keyPress);
-
-// console.log(keyPress());

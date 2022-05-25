@@ -1,11 +1,11 @@
 var $contact = document.querySelector('#contact-form');
-var messageData = {
-  name: null,
-  email: null,
-  message: null
-};
 
 function handleSubmit(event) {
+  var messageData = {
+    name: null,
+    email: null,
+    message: null
+  };
   console.log('submit fired');
   event.preventDefault();
   messageData.name = $contact.elements.name.value;

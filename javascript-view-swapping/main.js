@@ -10,14 +10,12 @@ function handleClick(event) {
       } else if ($allTabs[i] !== event.target.className) {
         $allTabs[i].className = 'tab';
       }
-      if (event.target.matches('.tab')) {
-        var $dataView = event.target.getAttribute('data-view');
-        for (let e = 0; e < $allView.length; e++) {
-          if ($allView[e].getAttribute('data-view') === event.target.getAttribute('data-view')) {
-            $allView[e].className = 'view';
-          } else if ($allView[e].getAttribute($dataView) !== event.target.$dataView) {
-            $allView[e].className = 'view hidden';
-          }
+      var $dataView = event.target.getAttribute('data-view');
+      for (let e = 0; e < $allView.length; e++) {
+        if ($allView[e].getAttribute('data-view') === event.target.getAttribute('data-view')) {
+          $allView[e].className = 'view';
+        } else if ($allView[e].getAttribute($dataView) !== event.target.$dataView) {
+          $allView[e].className = 'view hidden';
         }
       }
     }

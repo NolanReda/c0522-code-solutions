@@ -6,8 +6,6 @@ function includes(array, value) {
       return true;
     } else if (array[i] !== value) {
       continue;
-    } else {
-      return false;
     }
   }
 }

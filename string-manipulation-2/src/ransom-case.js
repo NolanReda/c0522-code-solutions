@@ -2,9 +2,11 @@
 function ransomCase(string) {
   var newString = [];
   for (let i = 0; i < string.length; i++) {
-    if (string[i] % 2 === 0) {
+    if ((i + 1) % 2 === 0) {
       newString.push(string[i].toUpperCase());
-    } else newString.push(string[i]);
+    } else if ((i + 1) % 2 !== 0) {
+      newString.push(string[i].toLowerCase());
+    }
   }
-  newString.join('');
+  return newString.join('');
 }

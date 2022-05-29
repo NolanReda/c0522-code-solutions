@@ -40,3 +40,7 @@ span {
   color: black;
   font-weight: bold;
 }
+
+span.price {
+  background-color: #fef1e6;
+}

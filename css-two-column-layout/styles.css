@@ -53,7 +53,7 @@ img {
 }
 
 .padding-lr-200 {
-  padding-right: 100px;
+  padding-right: 50px;
 }
 
 .padding-lr-100 {
@@ -73,21 +73,25 @@ img {
 }
 
 .padding-r-200 {
-  padding-right: 200px;
+  padding-right: 160px;
 }
 
 button {
   font-family: Karla, sans-serif;
   font-weight: bold;
   background-color: #fff;
-  border: solid;
+  border: solid 2px;
   color: #df827d;
   height: 35px;
-  width: 130px;
+  width: 150px;
 }
 
 .center {
   justify-content: center;
   margin-top: 30px;
   margin-bottom: 40px;
+}
+
+.padding-l-50 {
+  padding-left: 50px;
 }

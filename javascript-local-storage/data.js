@@ -5,7 +5,7 @@ var todos = [];
 var previousTodosJSON = localStorage.getItem('javascript-local-storage');
 
 if (previousTodosJSON !== null) {
-  todos.push(JSON.parse(previousTodosJSON));
+  todos = (JSON.parse(previousTodosJSON));
 }
 
 // console.log(todos);

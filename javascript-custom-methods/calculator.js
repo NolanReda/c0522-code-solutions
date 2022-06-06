@@ -1,29 +1,29 @@
 /* exported calculator */
 
 var calculator = {
-  add: function (x, y) {
+  add: (x, y) => {
     return x + y;
   },
-  subtract: function (x, y) {
+  subtract: (x, y) => {
     return x - y;
   },
-  multiply: function (x, y) {
+  multiply: (x, y) => {
     return x * y;
   },
-  divide: function (x, y) {
+  divide: (x, y) => {
     return x / y;
   },
-  square: function (x) {
+  square: x => {
     return x * x;
   },
-  sumAll: function (numbers) {
+  sumAll: numbers => {
     var sum = 0;
     for (let i = 0; i < numbers.length; i++) {
       sum += numbers[i];
     }
     return sum;
   },
-  getAverage: function (numbers) {
+  getAverage: numbers => {
     var avg = 0;
     for (let i = 0; i < numbers.length; i++) {
       avg += numbers[i];

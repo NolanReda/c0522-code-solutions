@@ -1,0 +1,26 @@
+.container {
+  max-width: 800px;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.green {
+  color: #18cd1b;
+}
+
+.border-bottom {
+  border-bottom: solid black 0.15rem;
+}
+
+.red {
+  color: red;
+}

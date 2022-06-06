@@ -1,0 +1,323 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.two {
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.bottom-border {
+  border-bottom: solid 1px #b9bab9;
+}
+
+.row {
+  display: flex;
+}
+
+hr {
+  background-color: #bebebe;
+  color: #bebebe;
+}
+
+.logo {
+  height: 60px;
+  width: 130px;
+}
+
+p {
+  font-family: Avenir, sans-serif;
+}
+
+.padding-l-header {
+  padding-left: 20px;
+}
+
+.column-half {
+  flex-basis: 50%;
+}
+
+.padding-l-75 {
+  padding-left: 75px;
+}
+
+.nav-bar {
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+  padding-right: 45px;
+  font-size: small;
+}
+
+.padding-r-15 {
+  padding-right: 15px;
+}
+
+a {
+  font-family: Avenir, sans-serif;
+  color: #b9bab9;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+.color {
+  color: #d5dae0;
+}
+
+.button {
+  display: flex;
+  color: #d5dae0;
+  background-color: #294464;
+  border: none;
+  border-radius: 3px;
+  height: 45px;
+  width: 125px;
+  justify-content: center;
+  align-items: center;
+}
+
+.avenir {
+  font-family: Avenir, sans-serif;
+}
+
+.tiempos-header {
+  font-family: "Tiempos Headline", sans-serif;
+}
+
+/* css for large image below */
+
+.hero-image {
+  background-image: url("images/hero.jpg");
+  background-size: contain;
+  position: relative;
+  font-size: 0.85rem;
+  height: 420px;
+  width: 745px;
+  color: #f7f8fa;
+  z-index: 1;
+}
+
+.emr {
+  padding-left: 50px;
+  position: absolute;
+  color: #f7f8fa;
+  z-index: 6;
+  top: 3rem;
+}
+
+.hero-p {
+  padding-left: 50px;
+  position: absolute;
+  color: #fff;
+  z-index: 6;
+  top: 8rem;
+  font-size: smaller;
+  line-height: 1.75;
+}
+
+.overlay {
+  background: rgb(0 0 0 / 35%);
+  position: absolute;
+  width: 745px;
+  height: 420px;
+  z-index: 3;
+}
+
+.get-started {
+  color: #d5dae0;
+  background-color: #294464;
+  border: solid;
+  border-color: #294464;
+  border-width: 10px;
+  border-radius: 3px;
+  padding-right: 15px;
+  padding-left: 15px;
+  position: relative;
+  left: 50px;
+  top: 19.5rem;
+  z-index: 5;
+}
+
+.padding-l-50 {
+  padding-left: 100px;
+}
+
+/* next row */
+
+.off-white {
+  background-color: #fafafa;
+}
+
+.clinicians {
+  background-color: #fafafa;
+  height: 360px;
+  margin-top: 50px;
+  border: solid;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+  border-width: thin;
+  border-color: #eaecef;
+}
+
+.prefer {
+  color: #838383;
+  justify-content: center;
+}
+
+.margin-top-45 {
+  margin-top: 45px;
+  margin-bottom: 0;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.padding-r-10 {
+  padding-right: 10px;
+}
+
+.padding-lr-100 {
+  text-align: center;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.padding-top-50 {
+  padding-top: 50px;
+}
+
+/* new row */
+
+.ready {
+  margin-bottom: 25px;
+}
+
+.grey-background {
+  background-color: #525351;
+  height: 330px;
+}
+
+.height-10 {
+  height: 10px;
+}
+
+.height-40 {
+  height: 70px;
+  align-items: center;
+  padding-left: 4rem;
+  font-size: smaller;
+}
+
+.pr15 {
+  padding-right: 15px;
+}
+
+.no-margin {
+  margin: 0%;
+}
+
+.gh {
+  flex-basis: 100%;
+  height: 75px;
+}
+
+.l50 {
+  padding-left: 50px;
+}
+
+.smaller {
+  font-size: smaller;
+}
+
+.padding-r-75 {
+  padding-right: 75px;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.line-spacing {
+  line-height: 35px;
+  font-size: smaller;
+}
+
+.logo-white {
+  width: 150px;
+  position: absolute;
+  left: 60px;
+  top: 5rem;
+}
+
+.position-rel {
+  position: relative;
+}
+
+.address {
+  margin-left: 60px;
+  margin-top: 4rem;
+  color: #b9bab9;
+}
+
+.column-third {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.line-height-20 {
+  line-height: 20px;
+}
+
+.line-height-5 {
+  line-height: 5px;
+}
+
+.pl-4 {
+  padding-left: 4rem;
+  padding-top: 5rem;
+}
+
+.pl-12 {
+  padding-left: 12rem;
+  padding-top: 5rem;
+}
+
+.white-font {
+  color: #b9bab9;
+}

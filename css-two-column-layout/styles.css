@@ -52,7 +52,7 @@ img {
 }
 
 .padding-lr-200 {
-  padding-right: 100px;
+  padding-right: 50px;
 }
 
 .padding-lr-100 {
@@ -60,7 +60,7 @@ img {
 }
 
 .padding-left-100 {
-  padding-left: 170px;
+  padding-left: 100px;
 }
 
 .padding-left-200 {
@@ -72,18 +72,17 @@ img {
 }
 
 .padding-r-200 {
-  padding-right: 200px;
+  padding-right: 160px;
 }
 
 button {
   font-family: Karla, sans-serif;
   font-weight: bold;
   background-color: #fff;
-  border: solid;
+  border: solid 2px;
   color: #df827d;
   height: 35px;
-  width: 130px;
-  margin-right: 70px;
+  width: 150px;
 }
 
 .center {
@@ -92,10 +91,6 @@ button {
   margin-bottom: 40px;
 }
 
-.margin-0 {
-  margin-left: -50px;
-}
-
-.margin-l-50 {
-  margin-left: 50px;
+.padding-l-50 {
+  padding-left: 50px;
 }

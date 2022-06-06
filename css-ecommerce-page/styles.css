@@ -1,0 +1,46 @@
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center {
+  justify-content: center;
+}
+
+.column-fifth {
+  flex-basis: 20%;
+}
+
+.fit {
+  object-fit: contain;
+  width: 200px;
+}
+
+h1 {
+  font-family: "DM Sans", sans-serif;
+}
+
+img {
+  height: 300px;
+}
+
+p {
+  font-family: "DM Sans", sans-serif;
+  color: #dcdcdc;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+span {
+  color: black;
+  font-weight: bold;
+}
+
+span.price {
+  background-color: #fef1e6;
+}

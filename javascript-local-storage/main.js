@@ -71,10 +71,3 @@ function renderTodo(todo) {
 
   return $todo;
 }
-
-function handleUnload(event) {
-  var todosJSON = JSON.stringify(todos);
-  localStorage.setItem('javascript-local-storage', todosJSON);
-}
-
-window.addEventListener('beforeunload', handleUnload);

@@ -37,17 +37,3 @@ Bank.prototype.getTotalAssets = function () {
     return 0;
   }
 };
-
-// if (this.accounts.length === 0 && typeof number === 'number') {
-//   return null;
-// } else {
-//   for (let i = 0; i < this.accounts.length; i++) {
-//     if (this.account[i].number !== number) {
-//       continue;
-//     } else if (this.accounts[i].number === number) {
-//       return this.accounts[i];
-//     } else if (number > this.accounts.length - 1) {
-//       return null;
-//     }
-//   }
-// }

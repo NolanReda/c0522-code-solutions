@@ -2,11 +2,9 @@
 
 function pick(source, keys) {
   var result = {};
-  for (var key in source) {
-    if (keys.includes(key)) {
-      result[key] = source[key];
-    } else if (keys.includes(key) === undefined) {
-      continue;
+  for (let i = 0; i < keys.length; i++) {
+    if (source[keys[i]] !== undefined) {
+      result[keys[i]] = source[keys[i]];
     }
   }
   return result;

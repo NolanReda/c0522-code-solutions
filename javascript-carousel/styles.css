@@ -1,0 +1,29 @@
+.container {
+  max-width: 850px;
+  margin: auto;
+  border: solid 3px black;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  width: 700px;
+  height: 400px;
+  margin: 0 20px;
+}
+
+.carousel {
+  padding: 50px 0 20px;
+}
+
+.dots {
+  margin: 0 0 20px;
+}
+
+.marg-5 {
+  margin: 0 5px;
+}

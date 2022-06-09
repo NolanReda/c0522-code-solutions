@@ -14,9 +14,7 @@ function Account(number, holder) {
 // return a boolean to show if the deposite was successfully added to the transactions array
 
 Account.prototype.deposit = function (amount) {
-  var newTransaction = new Transaction();
-  newTransaction.type = 'deposit';
-  newTransaction.amount = amount;
+  var newTransaction = new Transaction('deposit', amount);
   if (amount > 0 && amount % 1 === 0) {
     this.transactions.push(newTransaction);
     return true;
@@ -28,9 +26,7 @@ Account.prototype.deposit = function (amount) {
 // do the same thing for this one as deposit but use the name withdrawal as the type value
 
 Account.prototype.withdraw = function (amount) {
-  var newTransaction = new Transaction();
-  newTransaction.type = 'withdrawal';
-  newTransaction.amount = amount;
+  var newTransaction = new Transaction('withdrawal', amount);
   if (amount > 0 && amount % 1 === 0) {
     this.transactions.push(newTransaction);
     return true;

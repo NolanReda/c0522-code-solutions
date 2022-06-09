@@ -1,8 +1,10 @@
 /* exported defaults */
 
 function defaults(target, source) {
-  if (source !== {}) {
-    var returnTarget = Object.assign(target, source);
+  for (var keys in source) {
+    if (!Object.hasOwn(target, keys)) {
+      target[keys] = source[keys];
+    }
   }
-  return returnTarget;
+  return target;
 }

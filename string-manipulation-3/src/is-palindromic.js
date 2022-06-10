@@ -1,11 +1,14 @@
 /* exported isPalindromic */
 
 function isPalindromic(string) {
-  var arr = string.split('');
-  var arrReverse = arr.reverse().join('');
-  if (string === arrReverse) {
-    return true;
-  } else {
-    return false;
+  var reverse = '';
+  for (let i = string.length - 1; i >= 0; i--) {
+    reverse += string[i];
   }
+  return reverse;
+  // if (string === reverse) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 }

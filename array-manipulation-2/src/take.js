@@ -8,6 +8,11 @@
 
 // if not, just return the original array
 
+// if the input is more than the count
+// create a new array
+// search the input until reaching the index equal to the count value
+// put indexes up to that point into the new array and return it
+
 function take(array, count) {
   if (array.length > count) {
     var newArray = [];

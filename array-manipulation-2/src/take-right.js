@@ -2,18 +2,8 @@
 
 function takeRight(array, count) {
   var newArray = [];
-  for (let i = array.length - 1; i > count - 1; i--) {
-    newArray.push(array[i]);
+  for (let i = 0; i < array.length; i++) {
+    newArray.push(array[i] - count);
   }
   return newArray.reverse();
 }
-
-// if (array.length > count) {
-//   var newArray = [];
-//   for (let i = array.length; i > count - 1; i--) {
-//     newArray.push(array[i]);
-//   }
-//   return newArray.reverse();
-// } else {
-//   return array;
-// }

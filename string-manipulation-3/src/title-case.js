@@ -5,14 +5,6 @@ function titleCase(title) {
   var split = title.split(' ');
   for (let i = 0; i < split.length; i++) {
     var cap = split[i].charAt(0).toUpperCase() + split[i].substring(1, split[i].length).toLowerCase();
-    if (split[i].toLowerCase() === 'javascript') {
-      cap = 'JavaScript';
-    } else if (split[i].toLowerCase() === 'javascript:') {
-      cap = 'JavaScript:';
-    }
-    if (split[i].toLowerCase() === 'api') {
-      cap = 'API';
-    }
     if (split[i].toLowerCase() === 'and' || split[i].toLowerCase() === 'or' ||
       split[i].toLowerCase() === 'to' || split[i].toLowerCase() === 'the' || split[i].toLowerCase() === 'of' ||
       split[i].toLowerCase() === 'for' || split[i].toLowerCase() === 'an' ||
@@ -21,6 +13,14 @@ function titleCase(title) {
     }
     if (i === 0) {
       cap = split[i].charAt(0).toUpperCase() + split[i].substring(1, split[i].length).toLowerCase();
+    }
+    if (split[i].toLowerCase() === 'javascript') {
+      cap = 'JavaScript';
+    } else if (split[i].toLowerCase() === 'javascript:') {
+      cap = 'JavaScript:';
+    }
+    if (split[i].toLowerCase() === 'api') {
+      cap = 'API';
     }
     capArray.push(cap);
     var newString = capArray.join(' ');

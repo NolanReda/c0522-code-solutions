@@ -18,11 +18,11 @@ function titleCase(title) {
       cap = split[i].toLowerCase();
     }
     capArray.push(cap);
-    // console.log(capArray);
-    for (let p = 0; p < capArray.length; p++) {
-      if (capArray[p].includes(':')) {
-        // console.log(typeof capArray[p + 1]);
-      }
-    }
+    var colon = capArray.join(' ').split(':');
+    // console.log(colon[1]);
+    var afterColon = colon[1].charAt(0).toUpperCase() + colon[1].substring(1, colon[1].length.toLowerCase());
+    afterColon.join(': ');
+    // console.log(afterColon);
   }
+  return afterColon;
 }

@@ -22,7 +22,7 @@ function isAnagram(firstString, secondString) {
         }
       }
       if (first === second) {
-        return true;
+        continue;
       } else if (first !== second) {
         return false;
       }

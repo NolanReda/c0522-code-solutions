@@ -14,11 +14,11 @@ function zip(first, second) {
     if (f === first.length || i === second.length) {
       return newArr;
     }
-    var yes = [];
+    var newArr2 = [];
     if (i === f) {
-      yes.push(first[f]);
-      yes.push(second[i]);
-      newArr.push(yes);
+      newArr2.push(first[f]);
+      newArr2.push(second[i]);
+      newArr.push(newArr2);
       f++;
     }
   }

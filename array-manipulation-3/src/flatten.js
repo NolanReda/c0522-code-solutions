@@ -11,14 +11,9 @@ function flatten(array) {
   var flat = [];
   for (let i = 0; i < array.length; i++) {
     if (Array.isArray(array[i]) === true) {
-      var yes = [];
       for (let a = 0; a < array[i].length; a++) {
-        yes.push(array[i][a]);
+        flat.push(array[i][a]);
       }
-      for (let y = 0; y < yes.length; y++) {
-        flat.push(yes[y]);
-      }
-
     } else {
       flat.push(array[i]);
     }

@@ -1,5 +1,24 @@
 /* exported titleCase */
 
+// create a new array to hold capitalized words
+// split the title into an array
+// loop the title array
+// create a new variable and assign it the value the current index, check for the following as the loop runs and assign them in turn to the new variable:
+// start by capitalizing the first letter of every word in the title array
+// check for words that get lower cased by the titleCase rules
+// check to always capitalize the first letter of the title array
+// hard code the casing for "JavaScript", "JavaScript:", and "API" into to be checked
+// add the new variable to the capital letters array as the loop runs
+// after the loop runs, join the array, divided by spaces, into a new variable
+// split the new string by each charater
+// create another empty array
+// loop the new split array and check the following:
+// if a letter follows a hyphen, capitalize it,
+// if a letter follows a colon, capitalize it,
+// add all the letters back into the new empty array
+// join the new array back together
+// return the final joined array
+
 function titleCase(title) {
   var capArray = [];
   var split = title.split(' ');

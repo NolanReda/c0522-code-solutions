@@ -1,32 +1,83 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
-// var players = [
-//   { player: 'Nolan', hand: [], handTotal: 0 },
-//   { playerNumber: 'Vanessa', hand: [], handTotal: 0 },
-//   { playerNumber: 'Brian', hand: [], handTotal: 0 },
-//   { playerNumber: 'Q', hand: [], handTotal: 0 }
-// ];
+var players = [
+  { player: 'Nolan', hand: [], handTotal: 0 },
+  { player: 'Vanessa', hand: [], handTotal: 0 },
+  { player: 'Brian', hand: [], handTotal: 0 },
+  { player: 'Q', hand: [], handTotal: 0 }
+];
 
-// var deck = [
-//   { diamond: 'ace' }, { diamond: 2 }, { diamond: 3 }, { diamond: 4 }, { diamond: 5 }, { diamond: 6 }, { diamond: 7 }, { diamond: 8 }, { diamond: 9 }, { diamond: 10 }, { diamond: 'jack' }, { diamond: 'queen' }, { diamond: 'king' },
-//   { heart: 'ace' }, { heart: 2 }, { heart: 3 }, { heart: 4 }, { heart: 5 }, { heart: 6 }, { heart: 7 }, { heart: 8 }, { heart: 9 }, { heart: 10 }, { heart: 'jack' }, { heart: 'queen' }, { heart: 'king' },
-//   { club: 'ace' }, { club: 2 }, { club: 3 }, { club: 4 }, { club: 5 }, { club: 6 }, { club: 7 }, { club: 8 }, { club: 9 }, { club: 10 }, { club: 'jack' }, { club: 'queen' }, { club: 'king' },
-//   { spade: 'ace' }, { spade: 2 }, { spade: 3 }, { spade: 4 }, { spade: 5 }, { spade: 6 }, { spade: 7 }, { spade: 8 }, { spade: 9 }, { spade: 10 }, { spade: 'jack' }, { spade: 'queen' }, { spade: 'king' }
-// ];
+var deck = [
+  { Diamond: 'ace' }, { Diamond: 2 }, { Diamond: 3 }, { Diamond: 4 }, { Diamond: 5 }, { Diamond: 6 }, { Diamond: 7 }, { Diamond: 8 }, { Diamond: 9 }, { Diamond: 10 }, { Diamond: 'jack' }, { Diamond: 'queen' }, { Diamond: 'king' },
+  { Heart: 'ace' }, { Heart: 2 }, { Heart: 3 }, { Heart: 4 }, { Heart: 5 }, { Heart: 6 }, { Heart: 7 }, { Heart: 8 }, { Heart: 9 }, { Heart: 10 }, { Heart: 'jack' }, { Heart: 'queen' }, { Heart: 'king' },
+  { Club: 'ace' }, { Club: 2 }, { Club: 3 }, { Club: 4 }, { Club: 5 }, { Club: 6 }, { Club: 7 }, { Club: 8 }, { Club: 9 }, { Club: 10 }, { Club: 'jack' }, { Club: 'queen' }, { Club: 'king' },
+  { Spade: 'ace' }, { Spade: 2 }, { Spade: 3 }, { Spade: 4 }, { Spade: 5 }, { Spade: 6 }, { Spade: 7 }, { Spade: 8 }, { Spade: 9 }, { Spade: 10 }, { Spade: 'jack' }, { Spade: 'queen' }, { Spade: 'king' }
+];
 
-// function deal() {
-//   var shuffled = _.shuffle(deck);
-//   console.log('shuffled deck:', shuffled[0]);
-//   var card = 0;
-//   for (let i = 0; i < 8; i++) {
-//     if (card === 4) {
-//       i = 0;
-//     }
-//     players[i].hand.push(shuffled[card]);
-//     card++;
-//   }
-// }
+function deal() {
+  var shuffled = _.shuffle(deck);
+  var card = 0;
+  for (let i = 0; i < 8; i++) {
+    if (card === 4) {
+      i = 0;
+    }
+    if (card === 8) {
+      return;
+    }
+    players[i].hand.push(shuffled[card]);
+    card++;
+  }
+}
 
-// function play() {
-//   deal();
-// }
+var $row = document.querySelector('#row');
+
+function play(event) {
+  deal();
+
+  for (let i = 0; i < players.length; i++) {
+    var div = document.createElement('div');
+    div.setAttribute('class', 'column');
+    div.setAttribute('style', 'font-size: larger; text-align: center;');
+    var playerHand = document.createElement('p');
+    playerHand.setAttribute('class', 'text');
+    var hand1 = document.createTextNode(players[i].player + ' was dealt: ' + Object.keys(players[i].hand[0]) + ' ' + Object.values(players[i].hand[0]) + ' and ' + Object.keys(players[i].hand[1]) + ' ' + Object.values(players[i].hand[1]));
+    playerHand.appendChild(hand1);
+    div.appendChild(playerHand);
+    $row.appendChild(div);
+    var card1 = Object.values(players[i].hand[0])[0];
+    var card2 = Object.values(players[i].hand[1])[0];
+    if (card1 === 'jack' || card1 === 'queen' || card1 === 'king') {
+      card1 = 10;
+    } else if (card1 === 'ace') {
+      card1 = 11;
+    }
+    if (card2 === 'jack' || card2 === 'queen' || card2 === 'king') {
+      card2 = 10;
+    } else if (card2 === 'ace') {
+      card2 = 11;
+    }
+    var total = card1 + card2;
+    players[i].handTotal = total;
+    var hand1more = document.createTextNode(' for a total of: ' + players[i].handTotal);
+    playerHand.appendChild(hand1more);
+  }
+
+  var allTotal = [];
+  for (let t = 0; t < players.length; t++) {
+    allTotal.push(players[t].handTotal);
+  }
+  var highest = Math.max(...allTotal);
+  // console.log(highest);
+  for (let w = 0; w < players.length; w++) {
+    if (players[w].handTotal === highest) {
+      var winner = players[w].player;
+    }
+  }
+  var winningPlayer = document.createElement('h2');
+  var winName = document.createTextNode('The winner is: ' + winner);
+  winningPlayer.appendChild(winName);
+  div.appendChild(winningPlayer);
+}
+
+var $button = document.querySelector('#play');
+$button.addEventListener('click', play);

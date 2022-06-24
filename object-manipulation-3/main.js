@@ -36,8 +36,7 @@ function play(event) {
 
   for (let i = 0; i < players.length; i++) {
     var div = document.createElement('div');
-    div.setAttribute('class', 'column');
-    div.setAttribute('style', 'font-size: larger; text-align: center;');
+    div.setAttribute('class', 'text-row');
     var playerHand = document.createElement('p');
     playerHand.setAttribute('class', 'text');
     var hand1 = document.createTextNode(players[i].player + ' was dealt: ' + Object.keys(players[i].hand[0]) + ' ' + Object.values(players[i].hand[0]) + ' and ' + Object.keys(players[i].hand[1]) + ' ' + Object.values(players[i].hand[1]));
@@ -67,7 +66,6 @@ function play(event) {
     allTotal.push(players[t].handTotal);
   }
   var highest = Math.max(...allTotal);
-  // console.log(highest);
   for (let w = 0; w < players.length; w++) {
     if (players[w].handTotal === highest) {
       var winner = players[w].player;

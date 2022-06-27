@@ -9,17 +9,24 @@
 // if the arrays are empty, return true
 
 function equal(first, second) {
-  let f = 0;
-  for (let s = 0; s < second.length; s++) {
-    if (f === first.length - 1 && first[first.length === second[second.length]]) {
-      return true;
-    } else if (first.length !== second.length) {
-      return false;
-    } else if (first[f] === second[s]) {
-      f++;
-    } else if (first[f] !== second[s]) {
-      return false;
+  let s = 0;
+  if (first.length !== second.length) {
+    for (let f = 0; f < first.length; f++) {
+      if (first[f] === second[s]) {
+        s++;
+      } else if (s === second.length - 1) {
+        return true;
+      } else if (first[f] !== second[s]) {
+        return false;
+      }
     }
   }
-  return true;
 }
+
+// if (f === first.length - 1 && first[first.length === second[second.length]]) {
+//   return true;
+// } else if (first[f] === second[s]) {
+//   f++;
+// } else if (first[f] !== second[s]) {
+//   return false;
+// }

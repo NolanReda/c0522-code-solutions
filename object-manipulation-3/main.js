@@ -7,14 +7,36 @@ var players = [
   { player: 'Q', hand: [], handTotal: 0 }
 ];
 
-var deck = [
-  { Diamond: 'ace' }, { Diamond: 2 }, { Diamond: 3 }, { Diamond: 4 }, { Diamond: 5 }, { Diamond: 6 }, { Diamond: 7 }, { Diamond: 8 }, { Diamond: 9 }, { Diamond: 10 }, { Diamond: 'jack' }, { Diamond: 'queen' }, { Diamond: 'king' },
-  { Heart: 'ace' }, { Heart: 2 }, { Heart: 3 }, { Heart: 4 }, { Heart: 5 }, { Heart: 6 }, { Heart: 7 }, { Heart: 8 }, { Heart: 9 }, { Heart: 10 }, { Heart: 'jack' }, { Heart: 'queen' }, { Heart: 'king' },
-  { Club: 'ace' }, { Club: 2 }, { Club: 3 }, { Club: 4 }, { Club: 5 }, { Club: 6 }, { Club: 7 }, { Club: 8 }, { Club: 9 }, { Club: 10 }, { Club: 'jack' }, { Club: 'queen' }, { Club: 'king' },
-  { Spade: 'ace' }, { Spade: 2 }, { Spade: 3 }, { Spade: 4 }, { Spade: 5 }, { Spade: 6 }, { Spade: 7 }, { Spade: 8 }, { Spade: 9 }, { Spade: 10 }, { Spade: 'jack' }, { Spade: 'queen' }, { Spade: 'king' }
-];
+var suits = ['Club', 'Spade', 'Diamond', 'Heart'];
+var ranks = ['ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'jack', 'queen', 'king'];
+var deck = [];
+
+var suitsCounter = 0;
+function makeDeck() {
+  for (let i = 0; i <= ranks.length; i++) {
+    var card = {};
+    if (suitsCounter === 4) {
+      return deck;
+    }
+    if (i === ranks.length) {
+      i = 0 - 1;
+      suitsCounter++;
+    } else {
+      card[suits[suitsCounter]] = ranks[i];
+      deck.push(card);
+    }
+  }
+}
+
+// var deck = [
+//   { Diamond: 'ace' }, { Diamond: 2 }, { Diamond: 3 }, { Diamond: 4 }, { Diamond: 5 }, { Diamond: 6 }, { Diamond: 7 }, { Diamond: 8 }, { Diamond: 9 }, { Diamond: 10 }, { Diamond: 'jack' }, { Diamond: 'queen' }, { Diamond: 'king' },
+//   { Heart: 'ace' }, { Heart: 2 }, { Heart: 3 }, { Heart: 4 }, { Heart: 5 }, { Heart: 6 }, { Heart: 7 }, { Heart: 8 }, { Heart: 9 }, { Heart: 10 }, { Heart: 'jack' }, { Heart: 'queen' }, { Heart: 'king' },
+//   { Club: 'ace' }, { Club: 2 }, { Club: 3 }, { Club: 4 }, { Club: 5 }, { Club: 6 }, { Club: 7 }, { Club: 8 }, { Club: 9 }, { Club: 10 }, { Club: 'jack' }, { Club: 'queen' }, { Club: 'king' },
+//   { Spade: 'ace' }, { Spade: 2 }, { Spade: 3 }, { Spade: 4 }, { Spade: 5 }, { Spade: 6 }, { Spade: 7 }, { Spade: 8 }, { Spade: 9 }, { Spade: 10 }, { Spade: 'jack' }, { Spade: 'queen' }, { Spade: 'king' }
+// ];
 
 function deal() {
+  makeDeck();
   var shuffled = _.shuffle(deck);
   var card = 0;
   for (let i = 0; i < 8; i++) {

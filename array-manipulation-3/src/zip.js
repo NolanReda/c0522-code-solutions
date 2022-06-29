@@ -8,19 +8,20 @@
 // add each new array to the first created array
 
 function zip(first, second) {
-  var newArr = [];
-  var f = 0;
-  for (let i = 0; i < second.length; i++) {
-    if (f === first.length || i === second.length) {
-      return newArr;
-    }
-    var newArr2 = [];
-    if (i === f) {
-      newArr2.push(first[f]);
-      newArr2.push(second[i]);
-      newArr.push(newArr2);
-      f++;
-    }
-  }
-  return newArr;
+  // var newArr = [];
+  // var f = 0;
+  // console.log(Math.min(first.length, second.length));
+  // for (let i = 0; i < second.length; i++) {
+  //   if (f === first.length || i === second.length) {
+  //     return newArr;
+  //   }
+  //   var newArr2 = [];
+  //   if (i === f) {
+  //     newArr2.push(first[f]);
+  //     newArr2.push(second[i]);
+  //     newArr.push(newArr2);
+  //     f++;
+  //   }
+  // }
+  // return newArr;
 }

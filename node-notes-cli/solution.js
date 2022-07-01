@@ -6,13 +6,8 @@ if (process.argv[2] === 'what') {
 }
 
 if (process.argv[2] === 'read') {
-  let i = 0;
-  const keys = Object.keys($json.notes);
-  while (i < keys.length) {
-    for (const key in $json.notes) {
-      console.log(keys[i] + ': ' + JSON.stringify($json.notes[key], null, 2));
-      i++;
-    }
+  for (const key in $json.notes) {
+    console.log(key + ': ' + JSON.stringify($json.notes[key], null, 2));
   }
 }
 

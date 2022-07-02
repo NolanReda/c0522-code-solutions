@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 
-app.use('/', (res, req) => {
+app.use(function (req, res) {
   // eslint-disable-next-line no-console
   console.log(req.method);
+  res.send('<p>Hello World!</p>');
 });
 
 app.listen(3000, () => {

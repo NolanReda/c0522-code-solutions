@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const $json = require('./data.json');
-// const fs = require('fs');
+const fs = require('fs');
 
 app.get('/api/notes', (req, res) => {
   const allNotes = [];
@@ -39,6 +39,9 @@ app.post('/api/notes', (req, res) => {
     newNote.id = id;
     $json.notes[id] = newNote;
     res.status(201).send(newNote);
+    fs.writeFile('./data.json', JSON.stringify($json, null, 2), 'utf-8', err => {
+      if (err) throw err;
+    });
   }
 });
 

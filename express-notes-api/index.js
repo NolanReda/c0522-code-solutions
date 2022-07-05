@@ -12,13 +12,17 @@ app.get('/api/notes', (req, res) => {
 });
 
 app.get('/api/notes/:id', (req, res) => {
-  // eslint-disable-next-line no-console
-  console.log(typeof Number(req.params.id));
   const key = req.params.id;
-  if ($json.notes[key]) {
+  if (isNaN(Number(req.params.id)) === true) {
+    res.status(400).send({
+      error: 'id but be a positive integer'
+    });
+  } else if ($json.notes[key]) {
     res.json($json.notes[key]);
-  } else {
-    res.status(404).send(`"error": "cannot find note with id ${req.params.id}"`);
+  } else if (!$json.notes[key]) {
+    res.status(404).send({
+      error: `cannot find note with id ${req.params.id}`
+    });
   }
 });
 

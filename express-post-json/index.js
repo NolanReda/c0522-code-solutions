@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const grades = [];
+const grades = {};
 
 app.get('/api/grades', (req, res) => {
   const allGrades = [];
@@ -12,12 +12,13 @@ app.get('/api/grades', (req, res) => {
 
 app.use(express.json());
 
-const id = { id: 1 };
+let nextId = 1;
 
 app.post('/api/grades', (req, res) => {
-  Object.assign(req.body, id);
-  id.id++;
-  grades.push(req.body);
+  const newObj = req.body;
+  const id = nextId++;
+  newObj.id = id;
+  grades[id] = newObj;
   res.status(201).send(req.body);
 });
 

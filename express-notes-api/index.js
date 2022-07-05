@@ -45,6 +45,15 @@ app.post('/api/notes', (req, res) => {
   }
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+  const key = req.params.id;
+  delete $json.notes[key];
+  res.send(req.params);
+  fs.writeFile('./data.json', JSON.stringify($json, null, 2), 'utf-8', err => {
+    if (err) throw err;
+  });
+});
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('Express server is listening on port 3000');

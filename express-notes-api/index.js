@@ -26,6 +26,16 @@ app.get('/api/notes/:id', (req, res) => {
   }
 });
 
+app.use(express.json());
+
+app.post('/api/notes', (req, res) => {
+  const newNote = req.body;
+  const id = $json.nextId++;
+  newNote.id = id;
+  $json.notes[id] = newNote;
+  res.status(201).send(newNote);
+});
+
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
   console.log('Express server is listening on port 3000');

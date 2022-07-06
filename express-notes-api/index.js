@@ -38,21 +38,50 @@ app.post('/api/notes', (req, res) => {
   } else if (req.body.content) {
     newNote.id = id;
     $json.notes[id] = newNote;
-    res.status(201).send(newNote);
     fs.writeFile('./data.json', JSON.stringify($json, null, 2), 'utf-8', err => {
-      if (err) throw err;
+      if (err) {
+        // eslint-disable-next-line no-console
+        console.log(err);
+        res.status(500).send({
+          error: 'An unexpected error occurred'
+        });
+      } else {
+        res.status(204).send(newNote);
+      }
     });
   }
 });
 
 app.delete('/api/notes/:id', (req, res) => {
   const key = req.params.id;
-  delete $json.notes[key];
-  res.send(req.params);
-  fs.writeFile('./data.json', JSON.stringify($json, null, 2), 'utf-8', err => {
-    if (err) throw err;
-  });
+  if (isNaN(Number(req.params.id)) === true) {
+    res.status(400).send({
+      error: 'id must be a positive integer'
+    });
+  } else if ($json.notes[key]) {
+    delete $json.notes[key];
+    fs.writeFile('./data.json', JSON.stringify($json, null, 2), 'utf-8', err => {
+      if (err) {
+        // eslint-disable-next-line no-console
+        console.log(err);
+        res.status(500).send({
+          error: 'An unexpected error occurred'
+        });
+      } else {
+        res.status(204).send();
+      }
+    });
+  } else if (!$json.notes[key]) {
+    res.status(404).send({
+      error: `cannot find note with id ${req.params.id}`
+    });
+  }
 });
+
+// app.put('/api/notes/:id', (req, res) => {
+//   const key = req.params.id;
+
+// });
 
 app.listen(3000, () => {
   // eslint-disable-next-line no-console

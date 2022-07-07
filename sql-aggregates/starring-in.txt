@@ -1,0 +1,18 @@
+    genre    | numberOfAppearances 
+-------------+---------------------
+ Family      |                   1
+ Animation   |                   1
+ Music       |                   1
+ Foreign     |                   1
+ Drama       |                   1
+ Action      |                   1
+ Comedy      |                   1
+ Classics    |                   2
+ Games       |                   2
+ Horror      |                   2
+ Sci-Fi      |                   2
+ New         |                   2
+ Sports      |                   3
+ Documentary |                   3
+(14 rows)
+

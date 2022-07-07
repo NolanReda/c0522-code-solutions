@@ -1,0 +1,11 @@
+ firstName | lastName |      film      
+-----------+----------+----------------
+ Ron       | Deluca   | Magic Mallrats
+ Guy       | Brownlee | Magic Mallrats
+ Derrick   | Bourque  | Magic Mallrats
+ Barbara   | Jones    | Magic Mallrats
+ Jon       | Wiles    | Magic Mallrats
+ Amanda    | Carter   | Magic Mallrats
+ Clayton   | Barbee   | Magic Mallrats
+(7 rows)
+

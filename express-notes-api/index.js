@@ -96,7 +96,7 @@ app.put('/api/notes/:id', (req, res) => {
           error: 'An unexpected error occurred'
         });
       } else {
-        res.status(204).send(editNote);
+        res.status(200).send(editNote);
       }
     });
   }

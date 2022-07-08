@@ -1,0 +1,49 @@
+<!doctype html>
+<!--<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body class="bg-success">
+  <div class="col-8 offset-2 my-5">
+    <div class="card">
+      <div class="card-body">
+        <h5>Chart.Js</h5>
+        <hr>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <script src="test.js"></script>
+  <script src="data.js"></script>
+  <script>
+    const ctx = document.querySelector('#myChart').getContext('2d');
+    const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['jan', 'feb', 'mar', 'apr', 'may', 'june', 'july'],
+        datasets: [{
+          label: 'my first dataset',
+          backgroundColor: 'rgba(255, 99, 132)',
+          borderColor: 'rgba(255, 99, 132)',
+          borderWidth: 1,
+          data: [12, 19, 30, 5, 2, 3]
+        }]
+      },
+      options: {}
+    });
+  </script>
+</body>
+
+</html> -->

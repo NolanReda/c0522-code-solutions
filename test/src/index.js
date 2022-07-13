@@ -1,15 +1,60 @@
-const ctx = document.querySelector('#myChart').getContext('2d');
-const chart = new Chart(ctx, {
+import { data } from './data';
+const Chart = require('chart.js');
+
+const ctx = document.querySelector('#myChart');
+const myChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['jan', 'feb', 'mar', 'apr', 'may', 'june', 'july'],
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [{
-      label: 'my first dataset',
-      backgroundColor: 'rgba(255, 99, 132)',
-      borderColor: 'rgba(255, 99, 132)',
-      borderWidth: 1,
-      data: [12, 19, 30, 5, 2, 3]
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
     }]
   },
-  options: {}
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
 });
+
+// const ctx = document.querySelector('#myChart').getContext('2d');
+// const myChart = new Chart(ctx, {
+//   type: 'bar',
+//   data: {
+//     labels: ['jan', 'feb', 'mar', 'apr', 'may', 'june', 'july'],
+//     datasets: [{
+//       label: 'my first dataset',
+//       backgroundColor: 'rgba(255, 99, 132)',
+//       borderColor: 'rgba(255, 99, 132)',
+//       borderWidth: 1,
+//       data: [12, 19, 3, 5, 2, 3]
+//     }]
+//   },
+//   options: {
+//     scales: {
+//       y: {
+//         beginAtZero: true
+//       }
+//     }
+//   }
+// });

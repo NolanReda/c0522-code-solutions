@@ -69,7 +69,8 @@ app.put('/api/grades/:id', (req, res) => {
     set "name" = $1,
         "course" = $2,
         "score" = $3
-        where "gradeId" = $4
+        where "gradeId" = $4A
+        returning *
   `;
     const params = [entry.name, entry.course, entry.score, id];
     db.query(sql, params)
@@ -98,6 +99,7 @@ app.delete('/api/grades/:id', (req, res) => {
   const sql = `
       delete from "grades"
       where "gradeId" = $1
+      returning *
     `;
   const params = [id];
   db.query(sql, params)

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function button(props) {
+function Button(props) {
   return <div>
            <button>Click here if youre a grubby Fox main</button>
            <div>
@@ -14,4 +14,4 @@ const container = document.querySelector('#root');
 
 const root = ReactDOM.createRoot(container);
 
-root.render(button());
+root.render(<Button />);

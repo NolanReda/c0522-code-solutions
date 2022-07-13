@@ -1,8 +1,8 @@
 
-export const data = {
-  silver1: 45,
-  silver2: 23,
-  silver3: 30,
-  silver4: 10,
-  silverElite: 14
+module.exports = {
+  silvers: 45,
+  goldNovas: 23,
+  mg: 30,
+  le: 10,
+  globalElite: 14
 };

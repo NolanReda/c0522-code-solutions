@@ -1,0 +1,49 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hot-button {
+  height: 45px;
+  width: 100px;
+  font-size: x-large;
+}
+
+.cold {
+  color: white;
+  background-color: #351c75;
+  border: solid 1.5px #351c75;
+}
+
+.cool {
+  color: white;
+  background-color: #674ea7;
+  border: solid 1.5px #674ea7;
+}
+
+.tepid {
+  color: white;
+  background-color: rgb(224 102 102);
+  border: solid 1.5px rgb(224 102 102);
+}
+
+.warm {
+  color: white;
+  background-color: rgb(246 178 107);
+  border: solid 1.5px rgb(246 178 107);
+}
+
+.hot {
+  color: white;
+  background-color: rgb(231 231 73);
+  border: solid 1.5px rgb(231 231 73);
+}
+
+.nuclear {
+  color: red;
+  background-color: rgb(255 255 255);
+  border: solid 1.5px red;
+}

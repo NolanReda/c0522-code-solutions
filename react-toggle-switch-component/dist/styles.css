@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-border {
+  height: 100px;
+  width: 200px;
+  border-radius: 50px;
+  border: solid 1px #ddd9d9;
+  position: relative;
+  box-shadow: inset 0 0 15px 7px rgb(0 0 0 / 57%);
+}
+
+.switch-off {
+  height: 98px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px #e7dede;
+  background-color: white;
+  position: relative;
+  right: 4px;
+}
+
+.switch-on {
+  height: 98px;
+  width: 100px;
+  border-radius: 50%;
+  border: solid 2px #e7dede;
+  background-color: white;
+  position: relative;
+  left: 6.2rem;
+}
+
+.off {
+  background-color: #e2e2e2;
+}
+
+.on {
+  background-color: #67c93c;
+}

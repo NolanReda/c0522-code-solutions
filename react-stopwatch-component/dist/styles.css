@@ -16,3 +16,18 @@
   align-items: center;
   font-size: 200px;
 }
+
+.play-pause {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.pause {
+  height: 90px;
+}
+
+.play {
+  height: 90px;
+}

@@ -1,5 +1,8 @@
 npm init -y
 
+"build": "webpack",
+"watch": "webpack --watch --mode=development --devtool=source-map",
+
 npm i --save-dev webpack webpack-cli babel-loader @babel/core @babel/plugin-transform-react-jsx
 npm i react react-dom
 

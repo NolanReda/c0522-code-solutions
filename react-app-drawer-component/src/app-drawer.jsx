@@ -4,26 +4,27 @@ export default class AppDrawer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      drawerClassNames: 'drawer hidden'
+      drawerClassNames: 'drawer hidden',
+      containerClass: 'container'
     };
     this.showMenu = this.showMenu.bind(this);
     this.hideMenu = this.hideMenu.bind(this);
   }
 
   showMenu(event) {
-    this.setState({ drawerClassNames: 'drawer' });
+    this.setState({ drawerClassNames: 'drawer', containerClass: 'container shadow' });
   }
 
   hideMenu(event) {
     if (this.state.drawerClassNames === 'drawer') {
-      this.setState({ drawerClassNames: 'drawer hidden' });
+      this.setState({ drawerClassNames: 'drawer hidden', containerClass: 'container' });
     }
   }
 
   render() {
     return (
       <div>
-        <div onClick={this.hideMenu} className='container'>
+        <div onClick={this.hideMenu} className={this.state.containerClass}>
           <img onClick={this.showMenu} className='menu-button' src='../src/img/menu.png' alt='menu button' />
         </div>
         <div className={this.state.drawerClassNames}>

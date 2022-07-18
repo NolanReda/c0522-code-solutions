@@ -5,21 +5,21 @@ export default class ValidatedInput extends React.Component {
     super(props);
     this.state = {
       passValue: '',
-      nameValue: '',
       imgSrc: null,
-      passConfirm: ''
+      passConfirm: '',
+      timeId: null
     };
-    this.handleUsernameChange = this.handleUsernameChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleUsernameChange(event) {
-    this.setState({ nameValue: event.target.value });
-  }
-
   handlePasswordChange(event) {
     this.setState({ passValue: event.target.value });
+    if (this.state.passValue.length < 8) {
+      this.setState({ imgSrc: './img/x-mark-16.png', passConfirm: 'Your password is too short' });
+      const timer = setTimeout(() => this.setState({ imgSrc: null, passConfirm: '' }), 2000);
+      this.setState({ timeId: timer });
+    }
   }
 
   handleSubmit(event) {
@@ -34,8 +34,6 @@ export default class ValidatedInput extends React.Component {
       setTimeout(() => this.setState({ imgSrc: null, passConfirm: null }), 2000);
     } else {
       event.preventDefault();
-      this.setState({ imgSrc: './img/x-mark-16.png', passConfirm: 'Your password is too short' });
-      setTimeout(() => this.setState({ imgSrc: null, passConfirm: '' }), 2000);
     }
   }
 

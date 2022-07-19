@@ -17,9 +17,16 @@ export default class ValidatedInput extends React.Component {
     this.setState({ passValue: event.target.value });
     if (this.state.passValue.length < 8) {
       this.setState({ imgSrc: './img/x-mark-16.png', passConfirm: 'Your password is too short' });
-      const timer = setTimeout(() => this.setState({ imgSrc: null, passConfirm: '' }), 2000);
-      this.setState({ timeId: timer });
+      const redX = setTimeout(() => this.setState({ imgSrc: null, passConfirm: '' }), 2000);
+      this.setState({ timeId: redX });
+    } else if (this.state.passValue.length === 8) {
+      // clearTimeout(this.state.timeId);
+      // this.setState({ timeId: null });
+      this.setState({ imgSrc: './img/checkmark-16.png' });
+      const check = setTimeout(() => this.setState({ imgSrc: null, passConfirm: null }), 2000);
+      this.setState({ timeId: check });
     }
+
   }
 
   handleSubmit(event) {

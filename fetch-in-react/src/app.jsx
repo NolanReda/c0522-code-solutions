@@ -17,7 +17,7 @@ class App extends React.Component {
         const user = data;
         this.setState({ users: user });
       })
-      .then(this.setState({ isLoading: false }));
+      .then(() => this.setState({ isLoading: false }));
   }
 
   render() {

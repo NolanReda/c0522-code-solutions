@@ -39,12 +39,7 @@ app.post('/api/auth/sign-up', (req, res, next) => {
           const re = { username: results.rows[0].username, userId: results.rows[0].userId, createdAt: results.rows[0].createdAt };
           res.status(201).send(re);
         })
-        .catch(err => {
-          console.error(err);
-          res.status(500).json({
-            error: 'an unexpected error occurred'
-          });
-        });
+        .catch(err => next(err));
     });
   /**
    * Hash the user's password with `argon2.hash()`

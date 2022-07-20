@@ -61,7 +61,7 @@ app.post('/api/auth/sign-in', (req, res, next) => {
       const [user] = results.rows;
       // eslint-disable-next-line no-console
       console.log(user);
-      if (!user.userId) {
+      if (!user) {
         throw new ClientError(401, 'did not find user');
       }
       argon2

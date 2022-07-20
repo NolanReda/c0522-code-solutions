@@ -65,15 +65,16 @@ app.post('/api/auth/sign-in', (req, res, next) => {
         throw new ClientError(401, 'did not find user');
       }
       argon2
-        .verify(user.hashedPassword, password);
-    })
-    .then(isMatching => {
-      // eslint-disable-next-line no-console
-      console.log('Does your password match?', isMatching);
-    })
-    .catch(err => {
-      console.error(err);
+        .verify(user.hashedPassword, password)
+        .then(isMatching => {
+          // eslint-disable-next-line no-console
+          console.log('Does your password match?', isMatching);
+        })
+        .catch(err => {
+          console.error(err);
+        });
     });
+
   /**
    * Query the database to find the "userId" and "hashedPassword" for the "username".
    * Then, 😉

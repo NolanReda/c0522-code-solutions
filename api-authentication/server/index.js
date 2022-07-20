@@ -87,8 +87,8 @@ app.post('/api/auth/sign-in', (req, res, next) => {
         .catch(err => {
           console.error(err);
         });
-    });
-
+    })
+    .catch(err => next(err));
   /**
    * Query the database to find the "userId" and "hashedPassword" for the "username".
    * Then, 😉

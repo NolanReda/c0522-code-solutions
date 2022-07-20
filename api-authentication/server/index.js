@@ -67,8 +67,22 @@ app.post('/api/auth/sign-in', (req, res, next) => {
       argon2
         .verify(user.hashedPassword, password)
         .then(isMatching => {
+          const [user] = results.rows;
+          if (!isMatching) {
+            throw new ClientError(401, 'invalid loggin');
+          }
           // eslint-disable-next-line no-console
           console.log('Does your password match?', isMatching);
+          const payload = {
+            userId: user.userId,
+            userName: username
+          };
+          // const token = jwt.sign(payload, process.env.TOKEN_SECRET);
+          const response = {
+            token: jwt.sign(payload, process.env.TOKEN_SECRET),
+            user: payload
+          };
+          res.status(200).send(response);
         })
         .catch(err => {
           console.error(err);

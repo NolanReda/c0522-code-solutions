@@ -1,0 +1,155 @@
+ --------------------------------------------Sign In-------------------------------------
+  Opening the page lands on the sign in page. The code pulls first from app.jsx as it's
+main source. Constructor runs first and sets 3 states: user as null, isAuthorized as true
+and route as a parsed hash location.
+
+  After that it runs through to the render method where it destructures the user and route
+properties from the state into new variables and assigns the new variable contectValue with
+an object containing the variables user, route, handleSignIn and handleSignOut.
+
+  It then returns a React tree with the AppContext.Provider element with the prop
+of contextValue. As a child of that it calls the creation of the React element Navbar from components.
+
+  After rendering the Navbar, the next child of the context provider, app.jsx renders the PageContainer
+React element. Inside of that the render calls the renderPage function which destructures the path
+property out of the route state. It then checks what the value of the path is. Currently it's empty so
+it calls to render the Auth React element. So over to auth.jsx we go.
+
+  Inside auth.jsx is another class component that destructures the user, route and handleSignIn from the context
+provider into new variables. It runs a check that if the value of user is truthy, it defaults to the home
+page. Since it's not it continues down to the React tree. Inside the react tree it sets up the welcome
+welcomeMessage then returns a layout with a parent div, child div and a grandchild header element an h2 element
+with the children of an i element, the text "Awesome App" and a p element containing the welcome message.
+A sibling to the header is another div element that calls the render of the AuthForm element with
+the props key=route.path, action=route.path and onSignIn=handleSignIn.
+
+  Over in auth-form.jsx is a constructor class that runs it's constructor with the states of username
+and password both set as empty strings. It moves down the render where it destructures this.state to
+create the new variable action out of the props and the handleChange and handleSubmit from this object.
+It then checks the action, and since it's the fist load and we are on sign-in, it sets the conditional actions
+of alternateActionText, alternateActionHref to switch the hash and action to sign-up when triggered and
+the submitButtonText to "Log In". It then renders the React tree with a parent form element that
+contains 2 child div elements each with a label and input for the username and password. As well as one final
+div element that contains the alternatActionText and submit button.
+
+  Now that the page is fully rendered it goes back to the app.jsx document and runs the componentDidMount
+method and starts listening for hashChange events on the window.
+
+  If the user selects the username input and starts to type it runs back to the auth-form.jsx document
+to resolve the 'onchange' event on the input field. Each character that the user types into the text
+the handleChange method grabs the name and value from the event target(which is the input field),
+and then calls the setState method to reasign and re-render the text field with the new state each time
+a new key is pressed. Then it will also do the same for the password input.
+
+  When the user clicks on the submit button it triggers the handleSubmit function in the AuthForm class.
+When that happens the function take the action from the props and destructures it into a new variable then
+assigns a new object defining the request headers to the variable req. The req object includes the POST method,
+JSON content-type header, and tells the body to be a stringified version of the state of this object, which
+includes the username and password. It then sends a FETCH request to the server at the path of api/auth/sign-in,
+at that point the server takes over.
+
+  When the server receives a request at the /auth/sign-in path with a valid username and password combo it goes
+to /server/index.js for the app.post for this path function to handle it. Upon recieving a request at that path
+it destructures the username and password from the request body into new variables.
+  It checks to make sure the
+request came in with both of those and if not, it yeets a new ClientError. Since we gave it a good user/pass
+it's going to skip that step and create a new variable called sql that contains a postgresql queary string
+to grab the username and hashedPassword from the users table in the database. It then sets the param for the
+given username and creates a db.query passing the sql and params variables are arguments that returns a promise.
+It then calls the then method on the return promise with the results as the parameter of an arrow function that
+first destructures the first element of the results.rows array into the new variable user. Then checks the
+truthiness of the user variable. Since in this case it IS truthy, it destructures the userId and hashedPassword
+out of the user object into two new variables.
+
+  It then calls on argon2 and the verify method on the return of argon2 to check the given user password against
+the stored hashedPassword in the users table in the database. Next it calls the then method on the result of that
+check as a parameter called isMatching for an arrow function that checks the truthiness of isMatching. Since this
+is a good user/pass it comes back true and then creates a new payload variable with an object containing the
+userId and username variables and also creates another new variable called token with a jsonwebtoken signed with
+the payload object and a TOKEN_SECRET. It then loads the responce with a json object including the token and the
+payload from user and returns it from the argon2.
+
+  Now that the response has been returned from the server it sends back to the handleSubmit in auth-form.jsx where
+the result of the FETCH and json parses it. The next then method call takes the results into an arrow function
+that checks if the action object is equal to "sign-up". Since it's not right now it moves to the else if and
+checks the truthiness of the user and token properties of the results object. Since right now they are true
+the result is assigned as the value of the onSignIn prop for this object and uses it as the render prop in AuthPage.
+
+  Now that onSignIn has a prop with a token inside of it it triggers the handleSignIn function over on app.jsx.
+handleSignIn then destructures the user and token from results object into two new variables and calls the
+setItem method of the localStorage on the window object to store the token along with a string to define it
+semantically. It then calls the setState method to update the state of this.user to the value of the user that
+came back with the token.
+
+  The setState call then triggers a re-render of the page.
+
+  The render method creates it's new variables from the user and new route from this.state, handleSignIn and
+handleSignOut from this and the new object containing user, route, handleSignIn and handleSignOut. Then it
+returns the React tree with the context provider, the navbar and the pagecontainer.
+
+  the difference this time is when the navbar renders the value of user will not be null and it will render the
+navbar to include the logo, the app title and a single sign out button.
+
+  When the renderPage function inside of the PageContainer this time, because when the last hashChange happened
+and path was set to an empty string, this time it will return the Home React element. Which in turn returns a
+React tree with one parent div element with an iframe element child carrying an absolute url link to getting
+Rick Rolled.
+
+  --------------------------------------------Sign Up------------------------------------------------
+
+  If either the sign up button or the register now alternatActionText is clicked it will trigger the hash
+change event that the window is listening for. It changes the hash from sign-in to sign-up and
+the event listener then triggers the parseRoute function with the new hash as an argument, call getItem on
+the windows localStorage and assign it to the variable token, and a user variable that only has value if
+there is a truthy value to token. In this case there is not so the value of user is set to null.
+Finally it sets the status of this.user to null again and isAuthorizing to false.
+
+  ParseRoute is called from the parseRoute.js file where the function takes the window.location.hash
+as it's argument under the parameter "hashRoute". It check if the argument starts with a "#" and
+since in this case it does, the value of the hashRoute parameter is replaced with the string but with
+"#" replaced with an empty string fragment. It then splits the hashRoute string at "?" and destructures
+it into two variables: path and queryString. Then it assigns the queryString as a new instance of
+URLSearchParams to the variable params and returns an object containing the path and params variables.
+
+  After running the parseRoute function it returns to app.jsx and replaces the value of this.state.route
+with the return of the function with a call on the setState method of 'this', which in turn triggers
+a re-render of the page.
+
+  The page re-renders the same way it did before except this time when it goes to Auth.jsx to render that tree,
+it passes the route with sign-up as the key and action props.
+
+  The AuthForm element then renders with alternatActionText and alternateActionHref set to do the opposite as
+in the sign up process.
+
+  If a user then begins typing in a new user/pass combo to sign-up for an account, the inputs will be triggering
+the onchange listner and passing the keystrokes to the handleChange function. The handleChange function then
+destructures the name and value properties from the event.target object and creates two new variables which it
+then passes as the name: value key/value pair in a call of the setState method on the next line. The setState
+method call then triggers a re-rendering of the applicable areas and re-renders the input-fields to include
+the new characters.
+
+  Once a user clicks on the submit button with their new user/pass combo plate, it sends the information stored
+in this.username and this.password over to the handleSubmit method where its going to, similar to the sign-in,
+set up an FETCH post request with a json content-type header and a body of a stringified version of the current
+state. The difference in this request is the path it will send it too. Because the current state of action is
+"sign-up" the request will be sent to api/auth/sign-up instead.
+
+  Once the server recieves the FETCH post request it refers to the app.post call for the path of api/auth/sign-up
+to determine what to do.
+
+  The app.post method call will then destructure the username and password out of the request body into new
+variables and check to make sure that both were provided by the client. In this case both have so now its calls
+a hash method on the return of an argon2 object with the provided password as the argument. It then passes the
+hashedPassword to a then method call as the parameter of an arrow function that creates a new sql variable that
+sets up the postgresql code to insert the new user information into the database. It sets the values to be stored
+as param identifiers for now. Then sets a new params variable with an array of params which include the username
+and hashedPassword values and finally returns a database query to send the information off to be stored.
+
+  The database will send back the result of the query in a promise object called results that will be passed as
+the argument for the next then method call which creates a new variable called user from the data in results.rows,
+and sends back a response from the server with a 201 status code and the new user information.
+
+  We return now to the handleSubmit function on auth-form.jsx.
+
+  handleSubmit takes the response from the server and JSON parses it and then checks the hash. If the hash is set
+to "sign-up" (which it currently is), it triggers a hashChange to "sign-in".

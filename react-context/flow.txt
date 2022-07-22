@@ -163,4 +163,25 @@ the alternatActionText and alternateActionHref on the AuthForm element will be s
 
   Assuming we are starting from a signed in screen.
 
-  If a user clicks on the sign-out button in the Navbar
+  If a user clicks on the sign-out button in the Navbar from the apps home page, it will trigger the onClick event
+listener which activates the handleSignOut function on the app.jsx file. The handleSignOut function will look into
+the local storage of your users browser and call the removeItem method oon the token stored inside. The function
+then calls setState to set the user state to null. The setState then triggers a re-render.
+
+  But now, this time when the page goes to it's render method and reaches navbar, navbar will read the user state and
+see a null value so it will render with the sign-up and sign-in buttons instead of the sign-out button. Next when
+the page tries to re-render the home screen of the app and head to the home.jsx file, it's going to read that there
+is a null value in the user context. This will trigger it to return the Redirect React element instead with the
+prop of "sign-in".
+
+  It then goes to the renderPage function on app.jsx where it see's the path is now set to "sign-in" and returns the
+Auth React element.
+
+  ------------------------------------------------Stay signed in------------------------------------------------
+
+  Say you're already signed in and leave the page. When you come back, after the constructor runs and jumps to the
+componentDidMount it's going to check the localStorage for the jwt token. Since the user was signed up the last time
+they were here it's going to be there. The function will decode the token and set the new state of user and isAuthorizing.
+
+  Since there is now a real value in user, the first thing that will be able to render when the renderPage function
+runs will be the Home React element.

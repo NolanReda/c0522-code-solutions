@@ -153,3 +153,14 @@ and sends back a response from the server with a 201 status code and the new use
 
   handleSubmit takes the response from the server and JSON parses it and then checks the hash. If the hash is set
 to "sign-up" (which it currently is), it triggers a hashChange to "sign-in".
+
+  The listener for hashChange events over on app.jsx is triggered and takes the new "sign-in" hash and replaces the
+old value of this.state.route with a parsed version of it with setState. The setState then triggers a re-render of
+the elements that need to be re-rendered. In this case the username and password input-fields will clear and
+the alternatActionText and alternateActionHref on the AuthForm element will be set to their sign in values.
+
+  -------------------------------------------------Sign Out-------------------------------------------------
+
+  Assuming we are starting from a signed in screen.
+
+  If a user clicks on the sign-out button in the Navbar

@@ -21,8 +21,8 @@ export default class AppDrawer extends React.Component {
   render() {
     return (
       <div>
-        <div onClick={this.hideMenu} className={this.state.isOpen ? 'container shadow' : 'container' }>
-          <img onClick={this.showMenu} className='menu-button' src='../src/img/menu.png' alt='menu button' />
+        <img onClick={this.showMenu} className='menu-button' src='../src/img/menu.png' alt='menu button' />
+        <div onClick={this.hideMenu} className={this.state.isOpen ? 'container shadow1' : 'container' }>
         </div>
         <div className={this.state.isOpen ? 'drawer' : 'drawer hidden'}>
           <h1>Choose a Game</h1>

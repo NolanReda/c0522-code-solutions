@@ -1,17 +1,3 @@
-npm init -y
-
-"build": "webpack",
-"watch": "webpack --watch --mode=development --devtool=source-map",
-
-npm i --save-dev webpack webpack-cli babel-loader @babel/core @babel/plugin-transform-react-jsx
-npm i react react-dom
-
-mkdir src dist
-
-touch dist/index.html src/index.jsx
-
-code webpack.config.js
-
 module.exports = {
   resolve: {
     extensions: ['.js', '.jsx']

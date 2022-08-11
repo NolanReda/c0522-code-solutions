@@ -2,12 +2,10 @@
 
 function removeTail(list) {
   if (list.next === null) {
-    return list;
+    return;
   }
   while (list.next.next !== null) {
     list = list.next;
-    if (list.next.next === null) {
-      return list;
-    }
   }
+  list.next = null;
 }

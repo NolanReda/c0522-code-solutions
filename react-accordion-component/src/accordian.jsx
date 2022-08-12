@@ -5,69 +5,33 @@ export default class Accordian extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dropHtml: 'drop-hide',
-      textHtml: 'text-box hidden',
-      dropCss: 'drop-hide',
-      textCss: 'text-box hidden',
-      dropJs: 'drop-hide',
-      textJs: 'text-box hidden'
+      openTopic: null,
+      topics: topicsArray
     };
-    this.handleHtml = this.handleHtml.bind(this);
-    this.handleCss = this.handleCss.bind(this);
-    this.handleJavaScript = this.handleJavaScript.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
+    this.createTopic = this.createTopic.bind(this);
   }
 
-  handleHtml(event) {
-    this.setState({ dropHtml: 'dropdown', textHtml: 'text-box' });
-    if (this.state.dropHtml === 'dropdown') {
-      this.setState({ dropHtml: 'drop-hide', textHtml: 'text-box hidden' });
-    }
+  handleDrop(event) {
+    // console.log(event.target.id);
+
   }
 
-  handleCss(event) {
-    this.setState({ dropCss: 'dropdown', textCss: 'text-box' });
-    if (this.state.dropCss === 'dropdown') {
-      this.setState({ dropCss: 'drop-hide', textCss: 'text-box hidden' });
-    }
-  }
-
-  handleJavaScript(event) {
-    this.setState({ dropJs: 'dropdown', textJs: 'text-box' });
-    if (this.state.dropJs === 'dropdown') {
-      this.setState({ dropJs: 'drop-hide', textJs: 'text-box hidden' });
-    }
-  }
+  // createTopic(topic) {
+  //   return
+  //   })
+  // }
 
   render() {
     return (
       <div id='menu'>
-        <div onClick={this.handleHtml} className='container'>
-          <div className={this.state.dropHtml}>
+        <div onClick={this.handleDrop} id='html' className='container'>
+          <div className="drop-hide">
             <h2>Hypertext Marckup Language</h2>
           </div>
-          <div className={this.state.textHtml}>
+          <div className="text-box">
             <p>
-              {topicsArray.HTML}
-            </p>
-          </div>
-        </div>
-        <div onClick={this.handleCss} className='container'>
-          <div className={this.state.dropCss}>
-            <h2>Cascading Style Sheets</h2>
-          </div>
-          <div className={this.state.textCss}>
-            <p>
-              {topicsArray.css}
-            </p>
-          </div>
-        </div>
-        <div onClick={this.handleJavaScript} className='container'>
-          <div className={this.state.dropJs}>
-            <h2>JavaScript</h2>
-          </div>
-          <div className={this.state.textJs}>
-            <p>
-              {topicsArray.javascript}
+              {this.state.topics.name}
             </p>
           </div>
         </div>

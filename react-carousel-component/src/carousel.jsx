@@ -51,10 +51,6 @@ export default class Carousel extends React.Component {
     this.timer();
   }
 
-  dotChange() {
-
-  }
-
   render() {
     const { images } = this.props;
     const { currentImage } = this.state;

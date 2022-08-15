@@ -19,7 +19,7 @@ export default class Carousel extends React.Component {
 
   timer() {
     const carousel = setInterval(() => {
-      if (this.state.currentImage === 3) {
+      if (this.state.currentImage === this.props.images.length - 1) {
         return this.setState({ currentImage: 0 });
       }
       this.setState({ currentImage: this.state.currentImage + 1 });
@@ -30,7 +30,7 @@ export default class Carousel extends React.Component {
   handleLeft(event) {
     clearInterval(this.state.intervalId);
     if (this.state.currentImage === 0) {
-      return this.setState({ currentImage: 3 });
+      return this.setState({ currentImage: this.props.images.length - 1 });
     }
     this.setState({ currentImage: this.state.currentImage - 1 });
     this.timer();
@@ -38,7 +38,7 @@ export default class Carousel extends React.Component {
 
   handleRight(event) {
     clearInterval(this.state.intervalId);
-    if (this.state.currentImage === 3) {
+    if (this.state.currentImage === this.props.images.length - 1) {
       return this.setState({ currentImage: 0 });
     }
     this.setState({ currentImage: this.state.currentImage + 1 });

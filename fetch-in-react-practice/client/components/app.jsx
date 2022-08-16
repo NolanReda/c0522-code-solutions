@@ -19,9 +19,10 @@ export default class App extends React.Component {
      * Then 😉, once the response JSON is received and parsed,
      * update state with the received todos.
      */
-    fetch('/api/todos')
-      .then(res => res.json())
-      .then(data => this.setState({ todos: data }));
+    fetch('api/todos')
+      .then(response => response.json())
+      .then(data => this.setState({ todos: data }))
+      .catch(err => console.error('Something went wrong', err));
   }
 
   addTodo(newTodo) {
@@ -41,16 +42,20 @@ export default class App extends React.Component {
     * TIP: Use Array.prototype.concat to create a new array containing the contents
     * of the old array, plus the object returned by the server.
     */
-    fetch('/api/todos', {
+
+    // newTodo: { task: 'user input string', isCompleted: 'false' }
+    fetch('api/todos', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify(newTodo)
     })
-      .then(res => res.json())
-      .then(data => {
-        const newEntry = this.state.todos.concat(data);
-        this.setState({ todos: newEntry });
-      });
+      .then(response => response.json())
+      .then(data => this.setState({
+        todos: this.state.todos.concat(data)
+      }))
+      .catch(err => console.error('Something went wrong', err));
   }
 
   toggleCompleted(todoId) {
@@ -75,6 +80,21 @@ export default class App extends React.Component {
      * TIP: Be sure to SERIALIZE the updates in the body with JSON.stringify()
      * And specify the "Content-Type" header as "application/json"
      */
+    const clicked = this.state.todos.find(todo => todo.todoId === todoId);
+    const completed = { isCompleted: !clicked.isCompleted };
+
+    fetch(`api/todos/${todoId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(completed)
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ todos: this.state.todos.map(todo => (todo.todoId === todoId) ? data : todo) });
+      })
+      .catch(err => console.error('Something went wrong', err));
   }
 
   render() {
@@ -82,14 +102,12 @@ export default class App extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col pt-5">
-            <PageTitle text="Todo App"/>
-            <TodoForm onSubmit={this.addTodo}/>
-            <TodoList todos={this.state.todos} toggleCompleted={this.toggleCompleted}/>
+            <PageTitle text="Todo App" />
+            <TodoForm onSubmit={this.addTodo} />
+            <TodoList todos={this.state.todos} toggleCompleted={this.toggleCompleted} />
           </div>
         </div>
       </div>
     );
   }
 }
-
-// , headers: { 'Content-Type': 'application/json' }

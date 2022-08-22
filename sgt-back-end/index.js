@@ -69,12 +69,17 @@ app.put('/api/grades/:id', (req, res) => {
     set "name" = $1,
         "course" = $2,
         "score" = $3
-        where "gradeId" = $4A
+        where "gradeId" = $4
         returning *
   `;
     const params = [entry.name, entry.course, entry.score, id];
     db.query(sql, params)
       .then(result => {
+        if (!result.rows[0]) {
+          res.status(404).json({
+            error: `Cannot find a record matching ${id}`
+          });
+        }
         res.status(200).json(entry);
       })
       .catch(err => {
@@ -103,7 +108,14 @@ app.delete('/api/grades/:id', (req, res) => {
     `;
   const params = [id];
   db.query(sql, params)
-    .then(res.status(204).json({ success: 'deleted' }))
+    .then(result => {
+      if (!result.rows[0]) {
+        res.status(404).json({
+          error: `Cannot find a record matching ${id}`
+        });
+      }
+      res.status(204).json({ success: 'deleted' });
+    })
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: 'An unexpected error occured' });

@@ -1,0 +1,30 @@
+#menu {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  flex-direction: column;
+}
+
+.container {
+  width: 413px;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  border: solid 1.5px black;
+  background-color: lightgrey;
+  width: 400px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.text-box {
+  padding: 0 5px;
+  border: solid 1px black;
+  width: 400px;
+}
+
+.hidden {
+  display: none;
+}
